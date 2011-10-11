@@ -1,6 +1,10 @@
 {% extends "index.html" %}
 {% block content %}
-LIST
+
+<form method="get" action="list">
+      <input type="text" name="search" size="20" value="Search here...">
+      <input type="submit" value="Search">
+</form>
 
 {% for proj in projects|sort %}
 
