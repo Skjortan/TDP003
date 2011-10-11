@@ -1,0 +1,10 @@
+{% extends "index.html" %}
+{% block content %}
+
+<b>Tekniker som används i våra projekt:</b><br>
+
+{% for techs in tech %}
+{{ techs }}<br>
+{% endfor %}
+
+{% endblock %}

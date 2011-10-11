@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Projects of Awesomeness!</title>
+<link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" type="text/css">		
+</head>
+<body>
+
+<div id="centrering">
+<div id="logga">
+
+<form name="search_form" method="post" action="search.html">
+      <input type="text" name="search" size="20" value="Search for a project here...">
+      <input type="submit" name="Submit" value="Search">
+</form>
+
+</div>
+<br>
+<div id="meny">
+<div id="text">
+<h2>
+<a href="/">HOME</a>
+
+&nbsp; &nbsp; &nbsp; &nbsp; 
+
+<a href="/list">LIST PROJECTS</a>
+
+&nbsp; &nbsp; &nbsp; &nbsp; 
+
+<a href="/techniques">VIEW TECHNIQUES</a>
+</h2>
+</div>
+</div>
+  <div id="text">
+{% block content %}
+
+{% endblock %}
+	
+<div id="jesus">
+</div>	
+</div>
+</div>
+</body>
+</html>

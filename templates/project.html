@@ -1,0 +1,42 @@
+{% extends "index.html" %}
+{% block content %}
+
+{% for proj in project %}
+
+<table width="700" border="0">
+<tr>
+<td width="220" valign="middle" align="center">
+<img src="{{ url_for('static', filename='images/'+proj['big_image'])}}" width="200" height="200" border="1">
+</td>
+<td width="580" valign="top" align="left">
+<b>{{ proj['project_name'] }}</b>
+<br>
+{{ proj['long_description'] }}
+<br><br>
+Course: {{ proj['course_name'] }}
+<br>
+Course ID: {{ proj['course_id'] }}
+<br>
+Start/stop: {{ proj['start_date'] }} - {{ proj['end_date'] }}
+<br>
+Techniques used: 
+{% for techs in proj['techniques_used'] %}
+{{ techs }}
+{% endfor %}
+<br>
+Academic credits: {{ proj['academic_credits'] }}
+<br>
+Group size: {{ proj['group_size'] }}
+<br>
+Lulz had: {{ proj['lulz_had'] }}
+<br>
+<br>
+External link: {{ proj['external_link'] }}
+
+</td>
+</tr>
+
+</table>
+{% endfor %}
+
+{% endblock %}
