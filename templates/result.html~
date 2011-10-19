@@ -2,7 +2,7 @@
 {% block content %}
 <br>
 <form method="get" action="search">
-      Search box: <input type="text" name="search" size="20" value="">
+      Search box: <input type="text" onfocus="if (this.value=='Search here...') this.value=''" name="search" size="20" value="Search here...">
       <br>
       Categories: 
       <select name="categories">
@@ -14,15 +14,17 @@
       </select>
       <br>
       Techniques:
-      <input type="checkbox" name="check_tech" value="ada">Ada
-      <input type="checkbox" name="check_tech" value="c++">C++
-      <input type="checkbox" name="check_tech" value="csv">CSV
-      <input type="checkbox" name="check_tech" value="python">Python
-
+      <select name="technique">
+	<option selected>Choose a technique</option>
+	<option>python</option>
+	<option>c++</option>
+	<option>csv</option>
+	<option>ada</option>
+      </select>
       <br>
       Sort by:
-      <select name="by_sort">
-	<option selected>project_name</option>
+      <select name="by_sorting">
+	<option>project_name</option>
 	<option>start_date</option>
 	<option>end_date</option>
 	<option>project_no</option>
@@ -36,7 +38,6 @@
       <br>
       <input type="submit" value="Search">
 </form>
-
 <br>
 {% for proj in proj_hit %}
 
@@ -55,5 +56,7 @@
 </tr>
 
 </table>
+
 {% endfor %}
+
 {% endblock %}

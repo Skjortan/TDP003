@@ -1,12 +1,17 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
 <html>
 <head>
 <title>Projects of Awesomeness!</title>
-<link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" type="text/css">		
+<link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" type="text/css">	
 </head>
 <body>
 
 <div id="centrering">
+<br>
 <div id="logga">
 
 
@@ -14,30 +19,30 @@
 <br>
 <div id="meny">
 <div id="text">
+<div align="center">
 <h2>
 <a href="/">HOME</a>
 
-&nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; 
 
-<a href="/list">LIST PROJECTS</a>
+<a href="/list">PROJECTS</a>
 
-&nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; 
 
 <a href="/techniques">VIEW TECHNIQUES</a>
-
-&nbsp; &nbsp; &nbsp; &nbsp; 
-
-<a href="/search">SEARCH</a>
 </h2>
+</div>
 </div>
 </div>
   <div id="text">
 {% block content %}
 
 {% endblock %}
-	
+
+
 <div id="jesus">
-</div>	
+</div>
+
 </div>
 </div>
 </body>
