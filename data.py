@@ -113,7 +113,6 @@ def retrieve_projects(sort_by='start_date', sort_order='asc', techniques=None, s
             for tech in techniques:
                 if not tech in proj['techniques_used']:
                     add = False
-                    continue
 
         if add:
             return_lista.append(proj)
