@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+{% block content %}
+
+<b><h1>Techniques that are used in our projects:</h1></b><br>
+
+
+{% for techs in techniques %}
+<b>Projects using {{ techs['name'] }} is:</b><br>
+
+{% for test in techs['projects'] %}
+<a href="/project/{{ test['id'] }}">{{ test['name'] }}</a><br>
+{% endfor %}
+<br><br>
+{% endfor %}
+{% endblock %}

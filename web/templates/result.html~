@@ -1,0 +1,62 @@
+{% extends "index.html" %}
+{% block content %}
+<br>
+<form method="get" action="search">
+      Search box: <input type="text" onfocus="if (this.value=='Search here...') this.value=''" name="search" size="20" value="Search here...">
+      <br>
+      Categories: 
+      <select name="categories">
+      <option>project_name</option>
+      <option>long_description</option>
+      <option>group_size</option>
+      <option>course_name</option>
+      <option>course_id</option>
+      </select>
+      <br>
+      Techniques:
+      <select name="technique">
+	<option selected>Choose a technique</option>
+	<option>python</option>
+	<option>c++</option>
+	<option>csv</option>
+	<option>ada</option>
+      </select>
+      <br>
+      Sort by:
+      <select name="by_sorting">
+	<option>project_name</option>
+	<option>start_date</option>
+	<option>end_date</option>
+	<option>project_no</option>
+	</select>
+      <br>
+      Do you want to sort ascending:
+      <select name="sort">
+	<option selected>asc</option>
+	<option>desc</option>
+	</select>
+      <br>
+      <input type="submit" value="Search">
+</form>
+<br>
+{% for proj in proj_hit %}
+
+<table width="700" border="0">
+<tr>
+<td width="120" valign="middle" align="center">
+<img src="{{ url_for('static', filename='images/'+proj['small_image'])}}" width="100" height="100" border="1">
+</td>
+<td width="580" valign="top" align="left">
+<b>{{ proj['project_name'] }}</b>
+<br>
+{{ proj['short_description'] }}
+<br><br>
+<a href="project/{{ proj['project_no'] }}">Read more about the project...</a>
+</td>
+</tr>
+
+</table>
+
+{% endfor %}
+
+{% endblock %}

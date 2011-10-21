@@ -1,0 +1,6 @@
+{% extends "index.html" %}
+{% block content %}
+
+No result found
+
+{% endblock %}

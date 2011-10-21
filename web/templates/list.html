@@ -1,0 +1,57 @@
+{% extends "index.html" %}
+{% block content %}
+<br>
+<form method="get" action="list">
+      <b>Search box:</b> <input type="text" name="search" size="20" value="">
+      <br>
+      <b>Categories:</b> 
+      <input type="checkbox" name="categories" value="project_name">Project name
+      <input type="checkbox" name="categories" value="course_name">Course name
+      <input type="checkbox" name="categories" value="long_description">Description
+      <input type="checkbox" name="categories" value="course_id">Course ID
+      <input type="checkbox" name="categories" value="group_size">Group size
+      <br>
+      <b>Techniques:</b>
+      <input type="checkbox" checked="yes">All
+      <input type="checkbox" name="check_tech" value="ada">Ada
+      <input type="checkbox" name="check_tech" value="c++">C++
+      <input type="checkbox" name="check_tech" value="csv">CSV
+      <input type="checkbox" name="check_tech" value="python">Python
+
+      <br>
+      <b>Sort by:</b>
+      <select name="by_sort">
+	<option value="project_name">Project name</option>
+	<option value="start_date">Start date</option>
+	<option value="end_date">End date</option>
+	<option value="project_no">Project number</option>
+	</select>
+      <select name="sort">
+	<option value="asc">Ascending</option>
+	<option value="desc">Descending</option>
+	</select>
+      <br>
+      <input type="submit" value="Search">
+</form>
+
+<br>
+<h1>{{ fail }}</h1>
+{% for proj in proj_hit %}
+
+<table width="700" border="0">
+<tr>
+<td width="120" valign="middle" align="center">
+<img src="{{ url_for('static', filename='images/'+proj['small_image'])}}" width="100" height="100" border="1">
+</td>
+<td width="580" valign="top" align="left">
+<b>{{ proj['project_name'] }}</b>
+<br>
+{{ proj['short_description'] }}
+<br><br>
+<a href="project/{{ proj['project_no'] }}">Read more about the project...</a>
+</td>
+</tr>
+
+</table>
+{% endfor %}
+{% endblock %}

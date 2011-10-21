@@ -1,0 +1,56 @@
+README
+
+This project is made by Pelle Matsson and Sebastian Törngren.
+
+This project includes these files:
+README
+doc/
+	user_manual.doc
+web/
+	static/
+		images/
+			big_1.jpg
+			big_2.jpg
+			big_3.jpg
+			big_4.jpg
+			small_1.jpg
+			small_2.jpg
+			small_3.jpg
+			small_4.jpg
+		img/
+			back.png
+			bg.png
+			cat.gif
+			jesus.png
+			logga.png
+		style.css
+	templates/
+		index.html
+		list.html
+		no_result.html
+		page_not_found.html
+		project.html
+		result.html
+		start.html
+		techniques.html
+	awesome.log
+	awesome.py
+	data.csv
+	data.py
+	data.pyc
+
+
+The project uses Python, HTML, CSS, Flask and Jinja2.
+To be able to use the project on your Ubuntu system you need to install Python and Flask.
+You do that by opening the Terminal and type in:
+        sudo apt-get install Python2.7
+and
+	sudo apt-get install python-flask
+
+
+To test the website you need to go to the web-catalog in the Terminal, then type:
+   	python awesome.py
+Then open your web browser and go to the address:
+     	127.0.0.1:5000
+
+Congratulations! You have now your own website!

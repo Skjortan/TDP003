@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+{% block content %}
+
+<form method="get" action="list">
+      <input type="text" name="search" size="20" value="Search here...">
+      <input type="submit" value="Search">
+</form>
+
+{% for proj in projects|sort %}
+
+<table width="700" border="0">
+<tr>
+<td width="120" valign="middle" align="center">
+<img src="{{ url_for('static', filename='images/'+proj['small_image'])}}" width="100" height="100" border="1">
+</td>
+<td width="580" valign="top" align="left">
+<b>{{ proj['project_name'] }}</b>
+<br>
+{{ proj['short_description'] }}
+<br><br>
+<a href="project/{{ proj['project_no'] }}">Read more about the project...</a>
+</td>
+</tr>
+
+</table>
+
+{% endfor %}
+
+{% endblock %}

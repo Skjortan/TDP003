@@ -1,0 +1,9 @@
+{% extends "index.html" %}
+{% block content %}
+
+{% for proj in project %}
+{{ proj['project_name'] }}<br>
+{{ proj['project_no'] }}
+{% endfor %}
+
+{% endblock %}
